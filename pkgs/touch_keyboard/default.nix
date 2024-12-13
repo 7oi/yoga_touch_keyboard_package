@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
     owner = "7oi";
     repo = "chromiumos_touch_keyboard";
     rev = "v${version}";
-    hash = "sha256-bHvAET3VgcNelUsGELUQ9bHcdAfRCSP+3Bw8ovOpRU4=";
+    hash = "sha256-ZP/bXYciSFjP0TKXW9o+1yuQVL229mDU32WqBoQsc7A=";
   };
 
 
@@ -15,19 +15,4 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ cmake ];
   buildInputs = [ ];
 
-  # configurePhase = ''
-  #   mkdir -p build
-  #   cd build
-  #   cmake ../
-  # '';
-
-  # buildPhase = ''
-  #   pwd
-  #   make
-  # '';
-
-  # installPhase = ''
-  #   mkdir -p $out/bin
-  #   make install
-  # '';
 }
