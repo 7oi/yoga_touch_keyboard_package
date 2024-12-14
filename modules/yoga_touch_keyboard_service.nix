@@ -33,7 +33,7 @@ in
     };
 
     systemd.services.touch-keyboard-handler = {
-      wantedBy = [ "multi-user.target" ];
+      # wantedBy = [ "multi-user.target" ];
       unitConfig = {
         Description = "Touch keyboard handler";
       };
