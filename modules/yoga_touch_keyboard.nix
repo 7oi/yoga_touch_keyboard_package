@@ -11,14 +11,17 @@ let
   cfg = config.services.yoga_touch_keyboard;
 in
 {
-  services.yoga_touch_keyboard = {
-    enable = mkOption {
-      type = types.bool;
-      default = false;
-      description = ''
-        Whether to enable the touch keyboard
-      '';
+  options = {
+    services.yoga_touch_keyboard = {
+      enable = mkOption {
+        type = types.bool;
+        default = false;
+        description = ''
+          Whether to enable the touch keyboard
+        '';
+      };
     };
+
   };
 
   config = mkIf cfg.enable {

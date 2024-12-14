@@ -1,7 +1,7 @@
 { overlays }:
 
 {
-  touch_keyboard = import ./touch_keyboard.nix;
+  touch_keyboard = import ./yoga_touch_keyboard.nix;
 
   overlayNixpkgsForThisInstance =
     { pkgs, ... }:

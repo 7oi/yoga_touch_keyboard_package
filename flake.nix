@@ -31,11 +31,11 @@
 
       # A Nixpkgs overlay that provides a 'yoga_touch_keyboard' package.
       overlays.default = final: prev: {
-        yoga_touch_keyboard = final.callPackage ./pkgs/touch_keyboard { };
+        yoga_touch_keyboard = final.callPackage ./pkgs/yoga_touch_keyboard { };
       };
 
       packages = forEachSystem (system: {
-        touch_keyboard = pkgsBySystem.${system}.yoga_touch_keyboard;
+        yoga_touch_keyboard = pkgsBySystem.${system}.yoga_touch_keyboard;
         default = pkgsBySystem.${system}.yoga_touch_keyboard;
       });
 
