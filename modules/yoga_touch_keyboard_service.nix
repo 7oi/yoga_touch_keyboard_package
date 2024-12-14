@@ -8,7 +8,7 @@
 with lib;
 
 let
-  cfg = config.services.yoga-touch-keyboard;
+  cfg = config.services.touch-keyboard-handler;
 in
 {
   options = {
