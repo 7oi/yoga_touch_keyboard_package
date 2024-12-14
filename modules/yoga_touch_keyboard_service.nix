@@ -12,7 +12,7 @@ let
 in
 {
   options = {
-    services.yoga-touch-keyboard = {
+    services.touch-keyboard-handler = {
       enable = mkOption {
         type = types.bool;
         default = false;
@@ -27,7 +27,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = [ pkgs.yoga-touch-keyboard ];
 
-    systemd.services.yoga-touch-keyboard = {
+    systemd.services.touch-keyboard-handler = {
       wantedBy = [ "multi-user.target" ];
       unitConfig = {
         Description = "Touch keyboard handler";
