@@ -25,7 +25,12 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.yoga-touch-keyboard ];
+    environment = {
+      systemPackages = [ pkgs.yoga-touch-keyboard ];
+      etc = {
+        touch_keyboard.source = "${pkgs.yoga-touch-keyboard}/etc/touch_keyboard";
+      };
+    };
 
     systemd.services.touch-keyboard-handler = {
       wantedBy = [ "multi-user.target" ];
