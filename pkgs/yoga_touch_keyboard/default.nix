@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
     owner = "7oi";
     repo = "chromiumos_touch_keyboard";
     rev = "v${version}";
-    hash = "sha256-ibC15zd7EfPuU2nRyk7x2y+vgZRCQdsSqqFH5L5QT+U=";
+    hash = "sha256-aU4oHwBjXGZYgnvbQU6zFknIQD10XqyQUBZOtblN3Xo=";
   };
 
   meta = {
