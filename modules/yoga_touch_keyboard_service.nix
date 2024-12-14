@@ -36,10 +36,11 @@ in
       wantedBy = [ "multi-user.target" ];
       unitConfig = {
         Description = "Touch keyboard handler";
-        Type = "simple";
       };
       serviceConfig = {
         ExecStart = "${pkgs.yoga-touch-keyboard}/sbin/touch_keyboard_handler";
+        WorkingDirectory = "/etc/touch_keyboard";
+        Type = "simple";
       };
     };
 
