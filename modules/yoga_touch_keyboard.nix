@@ -8,11 +8,11 @@
 with lib;
 
 let
-  cfg = config.services.yoga_touch_keyboard;
+  cfg = config.services.yoga-touch-keyboard;
 in
 {
   options = {
-    services.yoga_touch_keyboard = {
+    services.yoga-touch-keyboard = {
       enable = mkOption {
         type = types.bool;
         default = false;
@@ -25,19 +25,19 @@ in
   };
 
   config = mkIf cfg.enable {
-    environment.systemPackages = [ pkgs.yoga_touch_keyboard ];
+    environment.systemPackages = [ pkgs.yoga-touch-keyboard ];
 
-    systemd.services.yoga_touch_keyboard = {
+    systemd.services.yoga-touch-keyboard = {
       wantedBy = [ "multi-user.target" ];
       unitConfig = {
         Description = "Touch keyboard handler";
         Type = "simple";
       };
       serviceConfig = {
-        ExecStart = "${pkgs.yoga_touch_keyboard}/sbin/yoga_touch_keyboard_handler";
+        ExecStart = "${pkgs.yoga-touch-keyboard}/sbin/yoga_touch_keyboard_handler";
       };
     };
 
-    services.udev.packages = [ pkgs.yoga_touch_keyboard ];
+    services.udev.packages = [ pkgs.yoga-touch-keyboard ];
   };
 }

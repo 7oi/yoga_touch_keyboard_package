@@ -29,14 +29,14 @@
     in
     {
 
-      # A Nixpkgs overlay that provides a 'yoga_touch_keyboard' package.
+      # A Nixpkgs overlay that provides a 'yoga-touch-keyboard' package.
       overlays.default = final: prev: {
-        yoga_touch_keyboard = final.callPackage ./pkgs/yoga_touch_keyboard { };
+        yoga-touch-keyboard = final.callPackage ./pkgs/yoga_touch_keyboard { };
       };
 
       packages = forEachSystem (system: {
-        yoga_touch_keyboard = pkgsBySystem.${system}.yoga_touch_keyboard;
-        default = pkgsBySystem.${system}.yoga_touch_keyboard;
+        yoga-touch-keyboard = pkgsBySystem.${system}.yoga-touch-keyboard;
+        default = pkgsBySystem.${system}.yoga-touch-keyboard;
       });
 
       nixosModules = import ./modules { overlays = overlayList; };

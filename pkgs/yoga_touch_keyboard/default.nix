@@ -1,6 +1,6 @@
 {stdenv, fetchFromGitHub, cmake}:
 stdenv.mkDerivation rec {
-  pname = "yoga_touch_keyboard";
+  pname = "yoga-touch-keyboard";
   version = "1.4.3";
 
   src = fetchFromGitHub {
